@@ -14,7 +14,7 @@ const LoginSignup = () => {
   const login = async () => {
     console.log("logim");
     let responseData;
-    await fetch("http://localhost:4000/login",{
+    await fetch("https://ecom-kii2.onrender.com/login",{
       method: "POST",
       headers:{
         Accept:'application/form-data',
@@ -33,7 +33,7 @@ const LoginSignup = () => {
   const signup = async () => {
     console.log("Sign up");
     let responseData;
-    await fetch("http://localhost:4000/signup",{
+    await fetch("https://ecom-kii2.onrender.com/signup",{
       method: "POST",
       headers:{
         Accept:'application/form-data',

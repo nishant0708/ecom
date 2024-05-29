@@ -16,12 +16,12 @@ const ShopContextProvider= (props)=>{
     const [all_product,setAll_product]=useState([]);
     const [cartItems, setCartItems]=useState(getDefaultCart());
    useEffect(()=>{
-    fetch('http://localhost:4000/allproducts')
+    fetch('https://ecom-kii2.onrender.com/allproducts')
     .then((response)=>response.json())
     .then((data)=>setAll_product(data))
  
     if(localStorage.getItem('auth-token')){
-        fetch('http://localhost:4000/getcart',{
+        fetch('https://ecom-kii2.onrender.com/getcart',{
             method:'POST',
             headers:{
                 Accept: "application/form-data",
@@ -40,7 +40,7 @@ const ShopContextProvider= (props)=>{
         return { ...prev, [ItemId]: (prev[ItemId] || 0) + 1 };
     });
     if (localStorage.getItem('auth-token')) {
-        fetch('http://localhost:4000/addtocart', {
+        fetch('https://ecom-kii2.onrender.com/addtocart', {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -78,7 +78,7 @@ const getTotalcartItems = () => {
    const removefromCart=(ItemId)=>{
     setCartItems( (prev) =>({...prev,[ItemId]:prev[ItemId]-1}) )
      if(localStorage.getItem('auth-token')){
-        fetch('http://localhost:4000/removefromcart', {
+        fetch('https://ecom-kii2.onrender.com/removefromcart', {
             method: "POST",
             headers: {
                 Accept: "application/json",
